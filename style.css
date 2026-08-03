@@ -1,0 +1,861 @@
+/* =========================
+   MISOA Premium Chilli Oil
+========================= */
+
+*{
+    margin:0;
+    padding:0px;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#faf7f2;
+    color:#222;
+    line-height:1.6;
+}
+
+/* Navigation */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#111;
+    z-index:999;
+    padding:0;
+}
+
+.navbar{
+    width:95%;
+    max-width:1400px;
+    margin:0 auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    height:60px;
+}
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+
+
+#cart-count{
+    background:#d62828;
+    color:white;
+    padding:2px 8px;
+    border-radius:50%;
+    font-size:14px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:45px;        /* Change this to adjust logo size */
+    height:45px;
+    object-fit:contain;
+}
+
+.logo span{
+    color:#fff;
+    font-size:34px;
+    font-weight:700;
+    letter-spacing:2px;
+    font-family:'Poppins',sans-serif;
+}
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#d62828;
+}
+
+.order-btn{
+    background:#d62828;
+    color:#fff;
+    padding:10px 22px;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.order-btn:hover{
+    background:#a80000;
+}
+.cart{
+
+    padding:80px 10%;
+
+    background:#F8F5EF;
+
+}
+
+#cart-items{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    margin-bottom:20px;
+
+}
+
+.cart-icon{
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}
+
+#cart-count{
+
+    background:#d62828;
+
+    color:white;
+
+    padding:2px 8px;
+
+    border-radius:50%;
+
+    font-size:14px;
+
+}
+
+/* Hero */
+
+
+.hero{
+
+    margin-top:60px;
+    min-height:calc(100vh - 60px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:60px 3% 0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.35),
+        rgba(20,61,42,.35)
+    ),
+    url("images/hero.jpg");
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #101010;
+}
+
+.hero-content{
+
+max-width:600px;
+
+margin-left:0%;
+
+text-align:left;
+
+z-index:2;
+
+}
+
+
+.hero h1{
+
+font-size:clamp(2.2rem,5vw,4rem);
+
+font-family:'Playfair Display',serif;
+
+line-height:1.1;
+
+margin-bottom:10px;
+
+color:white;
+
+}
+
+.hero p{
+
+font-size:clamp(1rem,1.8vw,1.4rem);
+line-height:1.7;
+
+max-width:420px;
+
+margin-bottom:35px;
+
+color:#F8F5EF;
+
+}
+
+.hero-btn{
+    background:#d62828;
+    color:white;
+    padding:15px 35px;
+    border-radius:40px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    background:#b00000;
+}
+
+/* Sections */
+
+section{
+    padding:90px 10%;
+}
+
+section h2{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:60px;
+}
+/* Trust Section */
+
+.trust-section{
+
+    background:#F8F5EF;
+
+    padding:80px 10%;
+
+}
+
+.brand{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:60px;
+
+}
+
+.brand-logo{
+
+    width:90px;
+
+    height:90px;
+
+    object-fit:contain;
+
+}
+
+.brand h2{
+
+    font-family:'Poppins',sans-serif;
+    color:#123524;
+
+    font-size:30px;
+
+    margin-bottom:5px;
+
+}
+
+.brand p{
+
+    color:#666;
+
+    font-size:18px;
+
+}
+
+.badges{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+.badge{
+
+    background:#ffffff;
+
+    border:1px solid rgba(200,166,77,.3);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+}
+
+.badge:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+.badge{
+
+    font-size:40px;
+
+}
+
+.badge h4{
+
+    margin-top:15px;
+
+    color:#123524;
+
+    font-size:22px;
+
+}
+
+.badge p{
+
+    margin-top:10px;
+
+    color:#777;
+
+    font-size:15px;
+
+}
+/* Products */
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+}
+
+
+
+.card{
+    position: relative;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.4s;
+}
+.product-tag{
+    position:absolute;
+    top:18px;
+    left:18px;
+
+    padding:8px 16px;
+
+    font-size:12px;
+    font-weight:600;
+
+    border-radius:30px;
+
+    color:white;
+
+    z-index:5;
+
+    letter-spacing:1px;
+}
+
+
+.product-tag.BEST{
+    background:#d62828;     /* Green */
+}
+.product-tag.LOVE{
+    background:#d62828;     /* Green */
+}
+
+.product-tag.new{
+    background:#2E7D32;     /* Green */
+}
+
+.product-tag.chef{
+    background:#C8A64D;     /* Gold */
+    color:#111;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    padding-top:20px;
+    width:100%;
+    height:auto;
+    max-height:320px;
+    object-fit:contain;
+    display:block;
+    margin:auto;
+}
+
+.card h3{
+    padding:20px 20px 10px;
+    font-size:28px;
+}
+
+.card p{
+    padding:0 20px;
+    color:#666;
+}
+
+.card ul{
+    padding:20px 40px;
+}
+
+.buy{
+    display:block;
+    text-align:center;
+    margin:20px;
+    padding:15px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:40px;
+    transition:.3s;
+}
+
+.buy:hover{
+    background:#128C7E;
+}
+
+/* Recipes */
+
+.recipe-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    margin-top:40px;
+}
+
+.recipe{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    transition:0.3s ease;
+}
+.recipe-header{
+    text-align:center;
+    max-width:800px;
+    margin:0 auto 50px;
+}
+
+.recipe-header h3{
+    font-size:30px;
+    color:#123524;
+    font-weight:700;
+    margin-bottom:12px;
+    font-family:'Playfair Display', serif;
+}
+
+.recipe-header p{
+    font-size:18px;
+    color:#666;
+    line-height:1.8;
+    max-width:650px;
+    margin:0 auto;
+}
+
+
+.recipe img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    transition:0.4s ease;
+}
+.recipe:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.recipe h3{
+    margin:20px 0 10px;
+}
+
+.recipe p{
+    padding:0 20px 25px;
+    flex-grow:1;
+}
+.recipe:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+/* About */
+
+.about{
+    background:#111;
+    color:white;
+}
+
+.about-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    text-align:center;
+}
+
+.about-box div{
+    padding:40px;
+}
+
+.about i{
+    font-size:45px;
+    color:#d62828;
+    margin-bottom:20px;
+}
+
+/* Contact */
+
+.contact{
+    text-align:center;
+}
+
+.contact-btn{
+    display:inline-block;
+    margin-top:30px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    padding:18px 40px;
+    border-radius:40px;
+    font-size:18px;
+}
+
+.contact-btn:hover{
+    background:#128C7E;
+}
+
+/* Footer */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* Floating WhatsApp */
+
+.whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:65px;
+    height:65px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:34px;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+    z-index:999;
+}
+
+/* ===========================
+   Mobile Navigation
+=========================== */
+
+.menu-toggle{
+    display:none;
+}
+
+/* ===========================
+   Large Desktop
+=========================== */
+
+@media (min-width:1400px){
+
+    .navbar{
+        max-width:1400px;
+    }
+
+    .hero-content{
+        max-width:650px;
+    }
+
+}
+
+/* ===========================
+   Laptop
+=========================== */
+
+@media (max-width:1200px){
+
+    .navbar{
+        width:96%;
+    }
+
+    .nav-links{
+        gap:20px;
+    }
+
+    .hero{
+        padding:40px 5%;
+    }
+
+    .recipe-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media (max-width:992px){
+
+    .navbar{
+
+        width:95%;
+
+    }
+
+    .logo span{
+
+        font-size:28px;
+
+    }
+
+    .nav-links{
+
+        gap:15px;
+
+    }
+
+    .order-btn{
+
+        padding:8px 16px;
+
+        font-size:14px;
+
+    }
+
+    .hero{
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        text-align:center;
+
+        padding:80px 5%;
+
+    }
+
+    .hero-content{
+
+        max-width:100%;
+
+        text-align:center;
+
+    }
+
+    .hero p{
+
+        max-width:600px;
+
+        margin:auto;
+
+        margin-bottom:30px;
+
+    }
+
+    .product-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .recipe-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media (max-width:768px){
+
+    .navbar{
+
+        flex-wrap:wrap;
+
+        height:auto;
+
+        padding:15px 0;
+
+    }
+
+    .logo{
+
+        width:100%;
+
+        justify-content:center;
+
+        margin-bottom:15px;
+
+    }
+
+    .nav-links{
+
+        width:100%;
+
+        justify-content:center;
+
+        gap:15px;
+
+        flex-wrap:wrap;
+
+        margin-bottom:15px;
+
+    }
+
+    .nav-actions{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .hero{
+
+        min-height:auto;
+
+        padding:60px 5%;
+
+        text-align:center;
+
+    }
+
+    .hero-content{
+
+        text-align:center;
+
+    }
+
+    .hero h1{
+
+        font-size:2.5rem;
+
+    }
+
+    .hero p{
+
+        font-size:1rem;
+
+        max-width:100%;
+
+    }
+
+    .product-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .recipe-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    section{
+
+        padding:70px 5%;
+
+    }
+
+}
+
+/* ===========================
+   Small Mobile
+=========================== */
+
+@media (max-width:480px){
+
+    .logo span{
+
+        font-size:24px;
+
+    }
+
+    .hero h1{
+
+        font-size:2rem;
+
+    }
+
+    .hero-btn,
+
+    .order-btn,
+
+    .buy{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    .card h3{
+
+        font-size:24px;
+
+    }
+
+    .recipe-header h3{
+
+        font-size:24px;
+
+    }
+
+}
