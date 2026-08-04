@@ -127,6 +127,7 @@ let cart = [];
 const addToCartButtons = document.querySelectorAll(".add-cart");
 const cartCount = document.getElementById("cart-count");
 const cartItems = document.getElementById("cart-items");
+const orderNowBtn = document.getElementById("orderNow");
 const checkoutBtn = document.getElementById("checkout");
 
 addToCartButtons.forEach(button => {
@@ -154,7 +155,8 @@ function updateCart(){
     if(cart.length === 0){
 
         cartItems.innerHTML = "<p>Your cart is empty.</p>";
-
+        if (checkoutBtn) checkoutBtn.href = "#";
+        if (orderNowBtn) orderNowBtn.href = "#";
         return;
     }
 
@@ -180,8 +182,17 @@ function updateCart(){
 
     message += `%0ATotal: ₹${total}`;
 
-    checkoutBtn.href =
-    `https://wa.me/919650920534?text=${message}`;
+    const whatsappURL =
+`https://wa.me/919650920534?text=${message}`;
+
+checkoutBtn.href = whatsappURL;
+if (checkoutBtn) {
+    checkoutBtn.href = whatsappURL;
+}
+
+if(orderNowBtn){
+    orderNowBtn.href = whatsappURL;
+}
 
 }
 const cartBtn = document.getElementById("cartBtn");
@@ -200,7 +211,7 @@ document.querySelectorAll(".nav-links a").forEach(link=>{
 
     link.addEventListener("click",()=>{
 
-        navLinks.classList.remove("active");
+        mobileMenu.classList.remove("active");
 
     });
 
@@ -210,21 +221,21 @@ document.querySelectorAll(".nav-links a").forEach(link=>{
 ========================== */
 
 const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+const mobileMenu = document.querySelector(".nav-links");
 
-if (menuToggle && navLinks) {
+if (menuToggle && mobileMenu) {
 
     // Open / Close Menu
     menuToggle.addEventListener("click", function (e) {
 
         e.stopPropagation();
 
-        navLinks.classList.toggle("active");
+        mobileMenu.classList.toggle("active");
 
         // Change icon
         const icon = menuToggle.querySelector("i");
 
-        if (navLinks.classList.contains("active")) {
+        if (mobileMenu.classList.contains("active")) {
             icon.classList.remove("fa-bars");
             icon.classList.add("fa-xmark");
         } else {
@@ -239,7 +250,7 @@ if (menuToggle && navLinks) {
 
         link.addEventListener("click", () => {
 
-            navLinks.classList.remove("active");
+            mobileMenu.classList.remove("active");
 
             const icon = menuToggle.querySelector("i");
 
@@ -253,9 +264,9 @@ if (menuToggle && navLinks) {
     // Close when clicking outside
     document.addEventListener("click", function (e) {
 
-        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
 
-            navLinks.classList.remove("active");
+            mobileMenu.classList.remove("active");
 
             const icon = menuToggle.querySelector("i");
 

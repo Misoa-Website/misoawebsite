@@ -564,7 +564,14 @@ section h2{
 .contact-btn:hover{
     background:#128C7E;
 }
+.email-btn{
+    background:#1565C0;
+    margin-right:15px;
+}
 
+.email-btn:hover{
+    background:#0D47A1;
+}
 /* Footer */
 
 footer{
@@ -687,9 +694,8 @@ footer{
     
     .hero{
         margin-top:70px;
-        min-height:90vh;
+        min-height:calc(100vh - 70px);
         padding:40px 20px;
-        text-align:center;
         background-size:cover;
         background-position:center;
     }
@@ -758,6 +764,7 @@ footer{
     max-width:700px;
     margin:0 auto 50px;
     color:#666;
+
 }
 
 .review-grid{
@@ -807,71 +814,6 @@ footer{
 
 }
 /* ==========================
-   PART 1 - MOBILE NAVIGATION
-   ========================== */
-
-@media (max-width:768px){
-
-    /* Keep desktop styles untouched */
-
-    .menu-toggle{
-        display:block;
-        background:none;
-        border:none;
-        color:#fff;
-        font-size:30px;
-        cursor:pointer;
-        z-index:1001;
-    }
-
-    .navbar{
-        height:70px;
-        padding:0 20px;
-        position:relative;
-    }
-
-    /* Hide desktop navigation */
-    .nav-links,
-    .nav-actions{
-        display:none;
-    }
-
-    /* Show menu after clicking ☰ */
-    .nav-links.active{
-
-        display:flex;
-
-        flex-direction:column;
-
-        position:absolute;
-
-        top:70px;
-        left:0;
-
-        width:100%;
-
-        background:#111;
-
-        padding:20px 0;
-
-        z-index:999;
-
-    }
-
-    .nav-links.active li{
-        list-style:none;
-        margin:12px 0;
-        text-align:center;
-    }
-
-    .nav-links.active a{
-        color:white;
-        text-decoration:none;
-        font-size:18px;
-    }
-
-}
-/* ==========================
    PART 2 - MOBILE NAVIGATION
    ========================== */
 
@@ -896,19 +838,19 @@ footer{
         padding:0 20px;
         position:relative;
     }
-
+   
     /* Logo */
     .logo{
         margin:0;
     }
 
     .logo img{
-        width:40px;
-        height:40px;
+        width:34px;
+        height:34px;
     }
 
     .logo span{
-        font-size:26px;
+        font-size:22px;
     }
 
     /* Hamburger */
@@ -951,8 +893,32 @@ footer{
         font-size:18px;
     }
 
-    /* Hide desktop buttons */
+    
+    /* Keep cart visible */
     .nav-actions{
-        display:none;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-left:auto;
+    margin-right:10px;
     }
-}
+
+    .cart-icon{
+    display:flex;
+    align-items:center;
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+    }
+
+    .order-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px 14px;
+    font-size:14px;
+    border-radius:25px;
+    white-space:nowrap;
+    }
+   
+   }
