@@ -195,18 +195,7 @@ if (cartBtn && cartSection) {
         });
     });
 }
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
 
-if(menuToggle && navLinks){
-
-    menuToggle.addEventListener("click", function(){
-
-        navLinks.classList.toggle("active");
-
-    });
-
-}
 document.querySelectorAll(".nav-links a").forEach(link=>{
 
     link.addEventListener("click",()=>{
@@ -216,3 +205,65 @@ document.querySelectorAll(".nav-links a").forEach(link=>{
     });
 
 });
+/* ==========================
+   MOBILE HAMBURGER MENU
+========================== */
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+if (menuToggle && navLinks) {
+
+    // Open / Close Menu
+    menuToggle.addEventListener("click", function (e) {
+
+        e.stopPropagation();
+
+        navLinks.classList.toggle("active");
+
+        // Change icon
+        const icon = menuToggle.querySelector("i");
+
+        if (navLinks.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+        } else {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        }
+
+    });
+
+    // Close after clicking a menu item
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+
+            const icon = menuToggle.querySelector("i");
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+
+        });
+
+    });
+
+    // Close when clicking outside
+    document.addEventListener("click", function (e) {
+
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+
+            navLinks.classList.remove("active");
+
+            const icon = menuToggle.querySelector("i");
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+
+        }
+
+    });
+
+}
