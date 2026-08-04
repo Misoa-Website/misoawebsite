@@ -196,14 +196,23 @@ if (cartBtn && cartSection) {
     });
 }
 const menuToggle = document.querySelector(".menu-toggle");
-const mobileNav = document.querySelector(".nav-links");
+const navLinks = document.querySelector(".nav-links");
 
-if(menuToggle && mobileNav){
+if(menuToggle && navLinks){
 
-    menuToggle.addEventListener("click", () => {
+    menuToggle.addEventListener("click", function(){
 
-        mobileNav.classList.toggle("active");
+        navLinks.classList.toggle("active");
 
     });
 
 }
+document.querySelectorAll(".nav-links a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
