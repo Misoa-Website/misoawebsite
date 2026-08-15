@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MISOA QR Generator</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+            background: #08251A;
+            color: white;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input {
+            width: 90%;
+            padding: 14px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            background: #D4AF37;
+            color: #08251A;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        #qrcode {
+            background: white;
+            padding: 20px;
+            display: inline-block;
+            margin: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>MISOA</h1>
+    <p>QR Code Generator</p>
+
+    <input
+        type="text"
+        id="website"
+        value="https://misoa.in"
+        placeholder="Enter website URL"
+    >
+
+    <br>
+
+    <button onclick="generateQR()">
+        Generate QR
+    </button>
+
+    <button onclick="downloadQR()">
+        Download PNG
+    </button>
+
+    <div id="qrcode"></div>
+
+</div>
+
+<script>
+
+function generateQR() {
+
+    const website = document.getElementById("website").value.trim();
+
+    if (!website) {
+        alert("Please enter a website URL.");
+        return;
+    }
+
+    document.getElementById("qrcode").innerHTML = "";
+
+    new QRCode(document.getElementById("qrcode"), {
+        text: website,
+        width: 400,
+        height: 400,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+}
+
+
+function downloadQR() {
+
+    const canvas = document.querySelector("#qrcode canvas");
+
+    if (!canvas) {
+        alert("Generate the QR code first.");
+        return;
+    }
+
+    const link = document.createElement("a");
+
+    link.download = "misoa-qr-code.png";
+
+    link.href = canvas.toDataURL("image/png");
+
+    link.click();
+}
+
+
+// Generate MISOA QR automatically
+generateQR();
+
+</script>
+
+</body>
+</html>
